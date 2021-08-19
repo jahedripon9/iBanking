@@ -1,23 +1,50 @@
+function getInputValue(inputId){
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
+    // clear the deposit input field
+
+inputField.value = '';
+    return amountValue;
+}
+
+
+function updateTotalField(totalFieldId, depositAmount){
+    
+    const totalField = document.getElementById(totalFieldId);
+    const totalText = totalField.innerText;
+    const previousTotal = parseFloat(totalText)
+
+    const newDepositTotal = parseFloat(previousTotal) + depositAmount;
+    
+    totalField.innerText = newDepositTotal;
+}
+
+
+
 // handle  Deposit Button Event
 
 document.getElementById('deposit-btn').addEventListener('click', function () {
     
     // Get the Amount Deposit
 
-    const depositInput = document.getElementById('deposit-input');
-    const newDepositAmountText = depositInput.value;
-    const newDepositAmount = parseFloat(newDepositAmountText);
+    // const depositInput = document.getElementById('deposit-input');
+    // const newDepositAmountText = depositInput.value;
+    // const newDepositAmount = parseFloat(newDepositAmountText);
+    const depositAmount = getInputValue('deposit-input');
     // console.log(depositAmount);
 
     // Update Deposit Total
 
-    const depositTotal = document.getElementById('deposit-total');
-    const previousDepositText = depositTotal.innerText;
-    const previousDepositAmount = parseFloat(previousDepositText)
+    // const depositTotal = document.getElementById('deposit-total');
+    // const previousDepositText = depositTotal.innerText;
+    // const previousDepositAmount = parseFloat(previousDepositText)
 
-    const newDepositTotal = parseFloat(previousDepositAmount) + newDepositAmount
+    // const newDepositTotal = parseFloat(previousDepositAmount) + newDepositAmount
     
-    depositTotal.innerText = newDepositTotal;
+    // depositTotal.innerText = newDepositTotal;
+
+    updateTotalField('deposit-total',depositAmount);
 
     // Update Blance
 
@@ -26,7 +53,7 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     const blanceTotalText = blanceTotal.innerText;
     const previousBlanceTotal = parseFloat(blanceTotalText);
 
-    const newBlanceTotal = previousBlanceTotal + newDepositAmount; 
+    const newBlanceTotal = previousBlanceTotal + depositAmount; 
     blanceTotal.innerText = newBlanceTotal;
 
 
@@ -35,29 +62,33 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
     // clear the deposit input field
 
-    depositInput.value = '';
+    // depositInput.value = '';
 });
 
 
 // handle Withdraw event handle
 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
-    const withdrawInput = document.getElementById('withdraw-input');
-    const withdrawAmountText = withdrawInput.value;
-    const newWithdrawAmount = parseFloat(withdrawAmountText); 
-    console.log(withdrawAmountText);
+    // const withdrawInput = document.getElementById('withdraw-input');
+    // const withdrawAmountText = withdrawInput.value;
+    // const newWithdrawAmount = parseFloat(withdrawAmountText); 
+    // console.log(withdrawAmountText);
+    const newWithdrawAmount = getInputValue('withdraw-input');
 
 
     // set Withdraw Total 
 
-    const withdrawTotal = document.getElementById('withdraw-total');
-    const previousWithdrawText = withdrawTotal.innerText;
-    const previousWithdrawTotal = parseFloat(previousWithdrawText);
+    // const withdrawTotal = document.getElementById('withdraw-total');
+    // const previousWithdrawText = withdrawTotal.innerText;
+    // const previousWithdrawTotal = parseFloat(previousWithdrawText);
 
 
-    const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-    withdrawTotal.innerText = newWithdrawTotal;
+    // const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+    // withdrawTotal.innerText = newWithdrawTotal;
 
+    updateTotalField('withdraw-total', newWithdrawAmount)
+
+    
     // update Blance
 
     const blanceTotal = document.getElementById('blance-total');
@@ -70,5 +101,5 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
 
     //  clear withdraw input
 
-    withdrawInput.value = '';
+    // withdrawInput.value = '';
 })
