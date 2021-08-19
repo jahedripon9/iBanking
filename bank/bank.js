@@ -8,7 +8,7 @@ document.getElementById('login-submit').addEventListener('click', function(){
     const yourPassword = passwordfield.value;
 
 
-    if(yourEmail == 'jahedripon@ibanking.com' && yourPassword == 'Helpline_bank'){
+    if(yourEmail == 'user@ibanking.com' && yourPassword == 'User1234'){
         window.location.href = 'ibank-home.html'
     }
 })
