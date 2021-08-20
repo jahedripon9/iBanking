@@ -20,18 +20,40 @@ function updateTotalField(totalFieldId, depositAmount){
     totalField.innerText = newDepositTotal;
 }
 
+function updateBalance(amount, isAdd){
+    const balanceTotal = document.getElementById('balance-total');
+
+    const balanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(balanceTotalText);
+
+    if(isAdd == true){
+        const newBalanceTotal = previousBalanceTotal + amount; 
+        balanceTotal.innerText = newBalanceTotal;
+    }
+    
+    else{
+        const newBalanceTotal = previousBalanceTotal - amount; 
+        balanceTotal.innerText = newBalanceTotal;
+    }
+
+}
+
 
 
 // handle  Deposit Button Event
 
 document.getElementById('deposit-btn').addEventListener('click', function () {
     
+    const depositAmount = getInputValue('deposit-input');
+    updateTotalField('deposit-total',depositAmount);
+    updateBalance(depositAmount, true);
+});
     // Get the Amount Deposit
 
     // const depositInput = document.getElementById('deposit-input');
     // const newDepositAmountText = depositInput.value;
     // const newDepositAmount = parseFloat(newDepositAmountText);
-    const depositAmount = getInputValue('deposit-input');
+    
     // console.log(depositAmount);
 
     // Update Deposit Total
@@ -44,36 +66,43 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     
     // depositTotal.innerText = newDepositTotal;
 
-    updateTotalField('deposit-total',depositAmount);
+    
 
     // Update Blance
 
-    const blanceTotal = document.getElementById('blance-total');
+    // const blanceTotal = document.getElementById('blance-total');
 
-    const blanceTotalText = blanceTotal.innerText;
-    const previousBlanceTotal = parseFloat(blanceTotalText);
+    // const blanceTotalText = blanceTotal.innerText;
+    // const previousBlanceTotal = parseFloat(blanceTotalText);
 
-    const newBlanceTotal = previousBlanceTotal + depositAmount; 
-    blanceTotal.innerText = newBlanceTotal;
+    // const newBlanceTotal = previousBlanceTotal + depositAmount; 
+    // blanceTotal.innerText = newBlanceTotal;
 
-
+    
 
 
 
     // clear the deposit input field
 
     // depositInput.value = '';
-});
+
 
 
 // handle Withdraw event handle
 
 document.getElementById('withdraw-btn').addEventListener('click', function () {
+    const withdrawAmount = getInputValue('withdraw-input');
+    updateTotalField('withdraw-total', withdrawAmount);
+    updateBalance(withdrawAmount, false);
+});
+
+
+
     // const withdrawInput = document.getElementById('withdraw-input');
     // const withdrawAmountText = withdrawInput.value;
     // const newWithdrawAmount = parseFloat(withdrawAmountText); 
     // console.log(withdrawAmountText);
-    const newWithdrawAmount = getInputValue('withdraw-input');
+   
 
 
     // set Withdraw Total 
@@ -86,20 +115,21 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     // const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
     // withdrawTotal.innerText = newWithdrawTotal;
 
-    updateTotalField('withdraw-total', newWithdrawAmount)
+    
 
     
     // update Blance
 
-    const blanceTotal = document.getElementById('blance-total');
-    const previousBlanceTotalText = blanceTotal.innerText;
-    const previousBlanceTotal = parseFloat(previousBlanceTotalText);
-    const newBlanceTotal = previousBlanceTotal - newWithdrawAmount;
+    // const balanceTotal = document.getElementById('balance-total');
+    // const previousBalanceTotalText = balanceTotal.innerText;
+    // const previousBalanceTotal = parseFloat(previousBalanceTotalText);
+    // const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
 
-    blanceTotal.innerText = newBlanceTotal;
+    // balanceTotal.innerText = newBalanceTotal;
+
+    
 
 
     //  clear withdraw input
 
     // withdrawInput.value = '';
-})
