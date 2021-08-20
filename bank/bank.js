@@ -11,5 +11,8 @@ document.getElementById('login-submit').addEventListener('click', function(){
     if(yourEmail == 'user@ibanking.com' && yourPassword == 'User1234'){
         window.location.href = 'ibank-home.html'
     }
+    else{
+        window.alert('Wrong Email & Password')
+    }
 })
 
