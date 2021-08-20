@@ -4,27 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBanking</title>
+    <title>iBanking</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-green-100">
+<body class="bg-green-100 back-bg1 md:w-100 lg:w-100">
+    
      <header>
-         <h1 class="text-6xl text-center mt-16 font-bold ">Welcome to <span class="text-green-500">iBanking</span> Service</h1>
+         <h1 class="text-6xl text-center mt-16 font-bold bg-white p-5 bg-opacity-80">Welcome to <span class="text-green-500">iBanking</span> Service</h1>
      </header>
      <main>
          <section class=" py-2 ">
-             <h3 class="text-center my-10 text-3xl font-bold">iBanking Loging</h3>
+             <h3 class="text-center my-10 text-3xl font-bold ">iBanking Loging</h3>
              <div class="text-center" action="">
                  <input id="your-email" class="border-2 border-gray-400 rounded-2xl text-center inline-block mb-5   px-10 py-2" type="text" placeholder=" E-mail"> 
                  <input id="your-passward" class="border-2 border-gray-400 rounded-2xl text-center inline-block px-10 py-2" type="password" placeholder=" Password">
                  <br>
                  <button id="login-submit" class="py-2 px-10 font-bold text-white bg-green-700 rounded-2xl mt-5">Submit</button>
             </div>
-             
+             <div class="  text-center bg-white my-1 opacity-80 ">
+                 <h4 class="text-blue-600 text-2xl font-bold">Everyone Loging</h4>
+                 <h6 class="font-bold text-red-500">Email : user@ibanking.com & Password: User1234 </h6>
+                
+             </div>
          </section>
      </main>
 
+     <footer class="text-gray-600 body-font bg-white opacity-80">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            <span class="ml-3 text-xl">iBanking</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Jahed Ahmed Ripon —
+            <a href="https://facebook.com/jahedripon9" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@JahedRipoN9</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500" href="https://facebook.com/jahedripon9" target="_blank">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500"  href="https://twitter.com/jahed_ripon" target="_blank">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500" href="https://www.instagram.com/jahed.ripon" target="_blank">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500" href="https://bd.linkedin.com/in/jahed-ahmed-ripon-74bb34188" target="_blank" >
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
 
      <script src="bank/bank.js"></script>
 </body>
